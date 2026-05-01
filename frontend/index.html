@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üniversite Diploma Kayıt Paneli</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Diploma Kayıt Paneli</h1>
+        <form id="diplomaForm">
+            <input type="text" id="studentName" placeholder="Öğrenci Adı Soyadı" required>
+            <input type="text" id="studentId" placeholder="Öğrenci Numarası" required>
+            <input type="text" id="department" placeholder="Bölüm" required>
+            <input type="text" id="degree" placeholder="Derece (Örn: Lisans)" required>
+            <input type="date" id="graduationDate" required>
+           <input type="text" id="gpa" placeholder="Not Ortalaması (Örn: 3,25)" required>
+            <button type="submit" id="issueBtn">Blockchain ve IPFS'e Kaydet</button>
+        </form>
+        
+        <div id="status"></div>
+
+        <div style="text-align: center; margin-top: 25px;">
+            <a href="verify.html" class="nav-link">🔍 Diploma Doğrulama Sayfasına Git →</a>
+        </div>
+    </div>
+
+    <!-- Profesyonel Onay Modalı -->
+    <div id="confirmModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>⚠️ Veri Onay Ekranı</h3>
+                <p>Blockchain üzerine yazılan veriler değiştirilemez. Lütfen bilgileri son kez kontrol edin.</p>
+            </div>
+            <div id="confirmMessage" class="modal-body">
+                <!-- Bilgiler JS ile buraya gelecek -->
+            </div>
+            <div class="modal-footer">
+                <button id="cancelBtn" class="btn-cancel">Düzenle</button>
+                <button id="confirmBtn" class="btn-confirm">Onayla ve Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

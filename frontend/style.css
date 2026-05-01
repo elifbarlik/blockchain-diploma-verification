@@ -1,0 +1,169 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #cbd5e1;
+    --success-bg: #f0fdf4;
+    --success-text: #166534;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+#diplomaForm, #verifyArea {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: var(--primary-hover);
+}
+
+.success-card {
+    background: var(--success-bg);
+    border: 1px solid #bbf7d0;
+    padding: 1.2rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    color: var(--success-text);
+}
+
+.result-item {
+    background: white;
+    padding: 0.6rem;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    border: 1px solid #e2e8f0;
+    word-break: break-all;
+    margin-top: 0.5rem;
+}
+/* Onay Modalı (Uyarı Ekranı) */
+/* Mevcut stillere ekle veya güncelle */
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    background: white;
+    width: 95%;
+    max-width: 500px; /* Daha geniş ve okunaklı */
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header h3 { margin: 0; color: #1e293b; font-size: 1.5rem; }
+.modal-header p { color: #64748b; font-size: 0.9rem; margin: 10px 0 20px 0; }
+
+.modal-body {
+    background: #f1f5f9;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 25px;
+}
+
+.confirm-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #cbd5e1;
+}
+
+.confirm-row:last-child { border-bottom: none; }
+.confirm-row span { color: #64748b; }
+
+.modal-footer { display: flex; gap: 15px; }
+
+.guidance-note {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    color: #92400e;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+.nav-link {
+    font-size: 14px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.nav-link:hover { text-decoration: underline; color: var(--primary-hover); }
+
+.error-msg {
+    background: #fef2f2;
+    color: #dc2626;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #fecaca;
+    margin-top: 20px;
+}
