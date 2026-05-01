@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diploma Doğrulama Sistemi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Diploma Doğrula</h1>
+        <p style="font-size: 13px; color: #64748b; text-align: center;">Blockchain kayıtlarını doğrulamak için hash kodunu girin.</p>
+        
+        <div id="verifyArea">
+            <input type="text" id="verifyHash" placeholder="Blockchain Hash Kodunu Yapıştırın (0x...)">
+            <button id="verifyBtn">Doğruluğu Sorgula</button>
+        </div>
+        <div id="verifyStatus"></div>
+
+        <div style="text-align: center; margin-top: 25px;">
+            <a href="index.html" style="font-size: 13px; color: #2563eb; text-decoration: none; font-weight: 600;">← Kayıt Paneline Geri Dön</a>
+        </div>
+    </div>
+    <script type="module" src="verify.js"></script>
+</body>
+</html>
