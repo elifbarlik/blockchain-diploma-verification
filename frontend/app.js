@@ -21,18 +21,18 @@ diplomaForm.addEventListener('submit', (e) => {
         return;
     }
 
-    // HATA KONTROLÜ 2: GPA Nokta (.) kullanımı yasak, virgül (,) zorunlu
-    if (gpaInput.includes('.')) {
-        alert("VİRGÜL HATASI\n\nLütfen not ortalamasını VİRGÜL (,) kullanarak giriniz. Örnek: 3,50");
+    // HATA KONTROLÜ 2: GPA Nokta (,) kullanımı yasak, virgül (.) zorunlu
+    if (gpaInput.includes(',')) {
+        alert("VİRGÜL HATASI\n\nLütfen not ortalamasını NOKTA (.) kullanarak giriniz. Örnek: 3.50");
         return;
     }
 
     // Sayısal kontrol için virgülü noktaya çevirip test ediyoruz
-    const gpaValue = parseFloat(gpaInput.replace(',', '.'));
+    const gpaValue = parseFloat(gpaInput.replace('.', ','));
 
     // HATA KONTROLÜ 3: GPA 0-4 arası sınır kontrolü
     if (isNaN(gpaValue) || gpaValue < 0 || gpaValue > 4) {
-        alert("ORTALAMANIZI KONTROL EDİN\n\nNot ortalaması 0,00 ile 4,00 arasında olmalıdır!");
+        alert("ORTALAMANIZI KONTROL EDİN\n\nNot ortalaması 0.00 ile 4.00 arasında olmalıdır!");
         return;
     }
     
@@ -43,7 +43,7 @@ diplomaForm.addEventListener('submit', (e) => {
         university: "X Üniversitesi",
         degree: document.getElementById('degree').value,
         graduationDate: document.getElementById('graduationDate').value,
-        gpa: gpaInput // Kullanıcının girdiği formatta (virgüllü) saklıyoruz
+        gpa: gpaInput // Kullanıcının girdiği formatta saklıyoruz
     };
 
     // Bilgileri modal içinde göster (Not Ortalamasını da ekledik)
